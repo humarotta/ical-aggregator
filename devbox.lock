@@ -5,7 +5,7 @@
       "last_modified": "2026-04-05T15:42:39Z",
       "resolved": "github:NixOS/nixpkgs/5e11f7acce6c3469bef9df154d78534fa7ae8b6c?lastModified=1775403759"
     },
-    "go@latest": {
+    "go@1.26.1": {
       "last_modified": "2026-04-16T08:46:55Z",
       "resolved": "github:NixOS/nixpkgs/b86751bc4085f48661017fa226dee99fab6c651b#go",
       "source": "devbox-search",
