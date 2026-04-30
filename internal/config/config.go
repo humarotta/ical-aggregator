@@ -12,3 +12,7 @@ type Calendar struct {
 type Feed struct {
 	URL string `yaml:"url"`
 }
+
+func NewConfig() *Config {
+	return &Config{}
+}
