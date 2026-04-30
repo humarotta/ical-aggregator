@@ -1,5 +1,12 @@
 package config
 
+import (
+	"fmt"
+	"os"
+
+	"github.com/goccy/go-yaml"
+)
+
 type Config struct {
 	Calendars []Calendar `yaml:"calendars"`
 }
@@ -15,4 +22,19 @@ type Feed struct {
 
 func NewConfig() *Config {
 	return &Config{}
+}
+
+func Load(filepath string) (*Config, error) {
+	cfg := NewConfig()
+
+	file, err := os.ReadFile(filepath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read config file: %w", err)
+	}
+
+	if err := yaml.Unmarshal(file, cfg); err != nil {
+		return nil, fmt.Errorf("failed to parse config file: %w", err)
+	}
+
+	return cfg, nil
 }
